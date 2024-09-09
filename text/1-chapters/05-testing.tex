@@ -1,0 +1,59 @@
+\chapter{Software testing}
+\label{ch:testing}
+
+% Choose your own headings.
+\section{Testing Strategy}
+
+To ensure the reliability, maintainability, and overall quality of the \textit{Farol de Santa Marta} website, a comprehensive testing strategy was implemented. The testing approach focused on validating the core functionalities of the application, ensuring that each component worked as intended and that the system as a whole performed reliably under various conditions.
+
+\subsection{Testing Approach}
+
+The testing strategy employed for this project included several layers of testing, each targeting different aspects of the application:
+
+\subsubsection{Unit Testing}
+
+Unit tests were developed to validate the functionality of individual components in isolation, particularly the models, views, and forms. These tests were designed to ensure that each function or method produced the expected output given a specific input. By testing each component independently, unit testing helped to identify and fix bugs early in the development process, reducing the likelihood of issues in the final product.
+
+The \texttt{models.py}, \texttt{views.py}, and \texttt{urls.py} files located in the \texttt{tests/} subdirectory contain the implementation of these unit tests. The tests cover critical aspects such as:
+
+\begin{itemize}
+    \item Models: Ensuring data integrity and validation rules for user profiles, courses, events, feedback, and products.
+    \item Views: Verifying that each view returns the correct HTTP response, renders the appropriate template, and interacts correctly with the models.
+    \item Forms: Testing form validation logic, including required fields, data formats, and custom validation methods.
+    \item User Flows: Simulating typical user actions such as registration, course enrollment, and making donations to ensure that these workflows operate smoothly from start to finish.
+\end{itemize}
+
+\subsubsection{Integration Testing}
+
+Integration tests were conducted to evaluate the interaction between different components of the system. Unlike unit tests, which isolate individual components, integration tests assess how components work together to accomplish broader tasks. These tests focused on verifying that the system's components were properly integrated and that data flowed correctly between models, views, and templates.
+
+For example, integration tests were used to verify that:
+
+\begin{itemize}
+    \item User registration and login processes correctly update the database and redirect users to the appropriate pages.
+    \item Event creation and management features correctly interact with the database and are displayed accurately on the events page.
+    \item The donation process integrates seamlessly with the payment gateway, and that transaction records are correctly stored.
+\end{itemize}
+
+\subsubsection{End-to-End Testing}
+
+End-to-end (E2E) tests were employed to simulate real user interactions with the system from start to finish. These tests ensured that the entire application, from the frontend to the backend, worked together as expected in real-world scenarios. E2E testing was crucial for validating user workflows and ensuring that the application met its functional requirements.
+
+Some of the key user flows tested through E2E testing included:
+
+\begin{itemize}
+    \item User registration and profile management.
+    \item Browsing and enrolling in courses.
+    \item Participating in events and providing feedback.
+    \item Making purchases from the store and donating to conservation efforts.
+\end{itemize}
+
+\subsection{Automation and Continuous Integration}
+
+To streamline the testing process and ensure consistent quality, tests were automated and integrated into the continuous integration (CI) pipeline. This approach allowed for automated testing whenever new code was pushed to the repository, ensuring that any issues were promptly identified and addressed before merging changes into the main codebase.
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../main"
+%%% End:
